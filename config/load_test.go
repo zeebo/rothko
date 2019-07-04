@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestLoad(t *testing.T) {

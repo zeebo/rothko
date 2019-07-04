@@ -8,7 +8,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestWriter(t *testing.T) {

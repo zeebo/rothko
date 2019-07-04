@@ -5,7 +5,7 @@ package files
 import (
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 // newTestCacheFile creates a file for the cache tests and will cause all sorts
@@ -38,6 +38,7 @@ func TestCache(t *testing.T) {
 		tok2, _, ok := ch.Put(newTestCacheFile(2))
 		assert.That(t, !ok)
 
+		// note: the precise file evicted is up to rng details
 		tok3, ev, ok := ch.Put(newTestCacheFile(3))
 		assert.That(t, ok)
 		assert.Equal(t, ev, newTestCacheFile(2))

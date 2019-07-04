@@ -10,7 +10,7 @@ import (
 
 	"github.com/zeebo/rothko/draw"
 	"github.com/zeebo/rothko/draw/iosevka"
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 var (

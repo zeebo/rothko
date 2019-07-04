@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
-	"github.com/zeebo/rothko/internal/pcg"
+	"github.com/zeebo/assert"
+	"github.com/zeebo/pcg"
 )
 
 // newTestDB constructs a temporary db.
@@ -62,7 +62,7 @@ func testPopulateDB(t testing.TB, db *DB, num int) (
 	return metrics
 }
 
-var metricRNG pcg.PCG
+var metricRNG pcg.T
 
 func randomMetric() string {
 	components := fastMod(metricRNG.Uint32(), 10)

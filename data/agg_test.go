@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zeebo/rothko/internal/assert"
-	"github.com/zeebo/rothko/internal/pcg"
+	"github.com/zeebo/assert"
+	"github.com/zeebo/pcg"
 )
 
 func TestAgg(t *testing.T) {
@@ -39,7 +39,7 @@ func BenchmarkAgg(b *testing.B) {
 	b.ResetTimer()
 
 	b.RunParallel(func(pb *testing.PB) {
-		var rng pcg.PCG
+		var rng pcg.T
 		for pb.Next() {
 			a.Observe(float64(rng.Uint32()), []byte("some id"))
 		}

@@ -5,8 +5,8 @@ package files
 import (
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
-	"github.com/zeebo/rothko/internal/pcg"
+	"github.com/zeebo/assert"
+	"github.com/zeebo/pcg"
 )
 
 func TestRecords(t *testing.T) {
@@ -46,7 +46,7 @@ func TestRecords(t *testing.T) {
 			data:    data,
 		}
 		out := rec.Marshal(nil)
-		var rng pcg.PCG
+		var rng pcg.T
 
 		for i := 0; i < 10000; i++ {
 			// remarshal, and goof it up!

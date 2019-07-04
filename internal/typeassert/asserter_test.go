@@ -5,7 +5,7 @@ package typeassert
 import (
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestAsserter(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestDBWrite(t *testing.T) {

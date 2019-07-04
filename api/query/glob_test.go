@@ -5,7 +5,7 @@ package query
 import (
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestGlob(t *testing.T) {

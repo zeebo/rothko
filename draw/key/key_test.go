@@ -9,7 +9,7 @@ import (
 
 	"github.com/zeebo/rothko/draw"
 	"github.com/zeebo/rothko/draw/colors"
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func saveImage(t *testing.T, name string, out *draw.RGB) {

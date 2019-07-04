@@ -5,7 +5,7 @@ package sset
 import (
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func collect(s *Set) (out []string) {

@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/zeebo/rothko/database/files/internal/meta"
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 // newTestFile constructs a temporary file backed by disk.

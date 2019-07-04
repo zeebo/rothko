@@ -3,7 +3,7 @@
 package files
 
 import (
-	"github.com/zeebo/rothko/internal/pcg"
+	"github.com/zeebo/pcg"
 )
 
 //
@@ -32,7 +32,7 @@ type cache struct {
 	cap     int
 	order   []cacheToken
 	handles map[cacheToken]cacheEntry
-	pcg     pcg.PCG
+	pcg     pcg.T
 }
 
 // newCache constructs a cache with the given capacity.
@@ -41,7 +41,7 @@ func newCache(cap int) *cache {
 		cap:     cap,
 		order:   make([]cacheToken, 0, cap),
 		handles: make(map[cacheToken]cacheEntry, cap),
-		pcg:     pcg.New(0, 0), // we could introduce entropy here
+		pcg:     pcg.New(1), // we could introduce entropy here
 	}
 }
 

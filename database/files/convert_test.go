@@ -5,7 +5,7 @@ package files
 import (
 	"testing"
 
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestConvert(t *testing.T) {

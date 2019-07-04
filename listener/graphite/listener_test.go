@@ -11,7 +11,7 @@ import (
 
 	"github.com/zeebo/rothko/data"
 	"github.com/zeebo/rothko/dist"
-	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/assert"
 )
 
 func TestListener(t *testing.T) {
