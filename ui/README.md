@@ -1,6 +1,6 @@
 # package ui
 
-`import "github.com/vivint/rothko/ui"`
+`import "github.com/zeebo/rothko/ui"`
 
 package ui provides a gzipped tar archive of the compiled ui.
 

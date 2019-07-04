@@ -5,9 +5,9 @@ package graphite
 import (
 	"context"
 
-	"github.com/vivint/rothko/internal/typeassert"
-	"github.com/vivint/rothko/listener"
-	"github.com/vivint/rothko/registry"
+	"github.com/zeebo/rothko/internal/typeassert"
+	"github.com/zeebo/rothko/listener"
+	"github.com/zeebo/rothko/registry"
 )
 
 func init() {

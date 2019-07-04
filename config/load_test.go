@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 func TestLoad(t *testing.T) {

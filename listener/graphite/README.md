@@ -1,6 +1,6 @@
 # package graphite
 
-`import "github.com/vivint/rothko/listener/graphite"`
+`import "github.com/zeebo/rothko/listener/graphite"`
 
 package graphite provides a listener for the graphite wire protocol.
 

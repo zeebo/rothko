@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/vivint/rothko/data"
-	"github.com/vivint/rothko/external"
+	"github.com/zeebo/rothko/data"
+	"github.com/zeebo/rothko/external"
 	"github.com/zeebo/errs"
 )
 

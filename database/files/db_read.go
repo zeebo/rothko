@@ -7,9 +7,9 @@ import (
 	"context"
 	"syscall"
 
-	"github.com/vivint/rothko/database"
-	"github.com/vivint/rothko/database/files/internal/sset"
-	"github.com/vivint/rothko/database/files/internal/system"
+	"github.com/zeebo/rothko/database"
+	"github.com/zeebo/rothko/database/files/internal/sset"
+	"github.com/zeebo/rothko/database/files/internal/system"
 	"github.com/zeebo/errs"
 )
 

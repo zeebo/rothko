@@ -133,7 +133,7 @@ docs() {
 	DIR="$2"
 
 	case "${PACKAGE}" in
-		"github.com/vivint/rothko" )
+		"github.com/zeebo/rothko" )
 			return
 			;;
 	esac
@@ -148,7 +148,7 @@ docs() {
 }
 
 # generate all the packages
-PACKAGES=$(go list -f '{{ .ImportPath }}|{{ .Dir }}' github.com/vivint/rothko/...)
+PACKAGES=$(go list -f '{{ .ImportPath }}|{{ .Dir }}' github.com/zeebo/rothko/...)
 for DESC in ${PACKAGES}; do
 	PACKAGE="$(echo "${DESC}" | cut -d '|' -f 1)"
 	DIR="$(echo "${DESC}" | cut -d '|' -f 2)"

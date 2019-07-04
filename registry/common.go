@@ -5,9 +5,9 @@ package registry
 import (
 	"context"
 
-	"github.com/vivint/rothko/database"
-	"github.com/vivint/rothko/dist"
-	"github.com/vivint/rothko/listener"
+	"github.com/zeebo/rothko/database"
+	"github.com/zeebo/rothko/dist"
+	"github.com/zeebo/rothko/listener"
 )
 
 // Default is the default registry that the Register calls insert into.

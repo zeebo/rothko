@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vivint/rothko/dist"
+	"github.com/zeebo/rothko/dist"
 )
 
 // agg aggregates observed values into a record.

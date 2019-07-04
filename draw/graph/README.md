@@ -1,6 +1,6 @@
 # package graph
 
-`import "github.com/vivint/rothko/draw/graph"`
+`import "github.com/zeebo/rothko/draw/graph"`
 
 package graph provides implementations of drawing rothko graphs.
 

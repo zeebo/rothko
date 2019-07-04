@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/vivint/rothko/database/files/internal/meta"
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/database/files/internal/meta"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 // newTestFile constructs a temporary file backed by disk.

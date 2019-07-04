@@ -5,7 +5,7 @@ package pcg
 import (
 	"testing"
 
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 func TestPCG(t *testing.T) {

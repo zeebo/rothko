@@ -6,8 +6,8 @@ import (
 	"context"
 	"os"
 
-	"github.com/vivint/rothko/database/files/internal/meta"
-	"github.com/vivint/rothko/database/files/internal/system"
+	"github.com/zeebo/rothko/database/files/internal/meta"
+	"github.com/zeebo/rothko/database/files/internal/system"
 )
 
 //

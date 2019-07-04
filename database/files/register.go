@@ -5,9 +5,9 @@ package files
 import (
 	"context"
 
-	"github.com/vivint/rothko/database"
-	"github.com/vivint/rothko/internal/typeassert"
-	"github.com/vivint/rothko/registry"
+	"github.com/zeebo/rothko/database"
+	"github.com/zeebo/rothko/internal/typeassert"
+	"github.com/zeebo/rothko/registry"
 )
 
 func init() {

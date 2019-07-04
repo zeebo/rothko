@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/vivint/rothko/external"
+	"github.com/zeebo/rothko/external"
 )
 
 func WithSignal(ctx context.Context, sigs ...os.Signal) (

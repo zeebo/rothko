@@ -1,6 +1,6 @@
 # package merge
 
-`import "github.com/vivint/rothko/merge"`
+`import "github.com/zeebo/rothko/merge"`
 
 package merge provides a merger for rothko data.
 

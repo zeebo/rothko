@@ -3,7 +3,7 @@
 package tdigest
 
 import (
-	"github.com/vivint/rothko/dist"
+	"github.com/zeebo/rothko/dist"
 	"github.com/zeebo/errs"
 	"github.com/zeebo/tdigest"
 )

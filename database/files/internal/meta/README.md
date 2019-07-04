@@ -1,6 +1,6 @@
 # package meta
 
-`import "github.com/vivint/rothko/database/files/internal/meta"`
+`import "github.com/zeebo/rothko/database/files/internal/meta"`
 
 
 

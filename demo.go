@@ -12,13 +12,13 @@ import (
 	"time"
 
 	"github.com/urfave/cli"
-	"github.com/vivint/rothko/config"
-	"github.com/vivint/rothko/data"
-	"github.com/vivint/rothko/database"
-	"github.com/vivint/rothko/dist"
-	"github.com/vivint/rothko/external"
-	"github.com/vivint/rothko/internal/junk"
-	"github.com/vivint/rothko/registry"
+	"github.com/zeebo/rothko/config"
+	"github.com/zeebo/rothko/data"
+	"github.com/zeebo/rothko/database"
+	"github.com/zeebo/rothko/dist"
+	"github.com/zeebo/rothko/external"
+	"github.com/zeebo/rothko/internal/junk"
+	"github.com/zeebo/rothko/registry"
 	"github.com/zeebo/errs"
 )
 

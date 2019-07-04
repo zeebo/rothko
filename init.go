@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/urfave/cli"
-	"github.com/vivint/rothko/config"
+	"github.com/zeebo/rothko/config"
 	"github.com/zeebo/errs"
 )
 

@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/vivint/rothko/draw"
-	"github.com/vivint/rothko/draw/colors"
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/draw"
+	"github.com/zeebo/rothko/draw/colors"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 func saveImage(t *testing.T, name string, out *draw.RGB) {

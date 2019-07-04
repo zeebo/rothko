@@ -1,6 +1,6 @@
 # package tmplfs
 
-`import "github.com/vivint/rothko/internal/tmplfs"`
+`import "github.com/zeebo/rothko/internal/tmplfs"`
 
 package tmplfs wraps an http.FileSystem to make html files html/templates.
 

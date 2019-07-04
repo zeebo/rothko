@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vivint/rothko/data"
-	"github.com/vivint/rothko/dist"
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/data"
+	"github.com/zeebo/rothko/dist"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 func TestListener(t *testing.T) {

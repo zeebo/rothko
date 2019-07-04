@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/vivint/rothko/draw"
-	"github.com/vivint/rothko/draw/iosevka"
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/draw"
+	"github.com/zeebo/rothko/draw/iosevka"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 var (

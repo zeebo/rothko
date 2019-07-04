@@ -3,8 +3,8 @@
 package main
 
 import (
-	"github.com/vivint/rothko"
-	"github.com/vivint/rothko/external"
+	"github.com/zeebo/rothko"
+	"github.com/zeebo/rothko/external"
 	"go.uber.org/zap"
 )
 

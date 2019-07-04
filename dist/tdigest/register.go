@@ -5,9 +5,9 @@ package tdigest
 import (
 	"context"
 
-	"github.com/vivint/rothko/dist"
-	"github.com/vivint/rothko/internal/typeassert"
-	"github.com/vivint/rothko/registry"
+	"github.com/zeebo/rothko/dist"
+	"github.com/zeebo/rothko/internal/typeassert"
+	"github.com/zeebo/rothko/registry"
 )
 
 func init() {

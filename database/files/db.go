@@ -10,10 +10,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/vivint/rothko/database"
-	"github.com/vivint/rothko/database/files/internal/sset"
-	"github.com/vivint/rothko/external"
-	"github.com/vivint/rothko/internal/junk"
+	"github.com/zeebo/rothko/database"
+	"github.com/zeebo/rothko/database/files/internal/sset"
+	"github.com/zeebo/rothko/external"
+	"github.com/zeebo/rothko/internal/junk"
 )
 
 // Options is a set of options to configure a database.

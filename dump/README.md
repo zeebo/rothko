@@ -1,6 +1,6 @@
 # package dump
 
-`import "github.com/vivint/rothko/dump"`
+`import "github.com/zeebo/rothko/dump"`
 
 package dump provides periodic dumping from a scribbler to disk.
 

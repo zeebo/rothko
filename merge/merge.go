@@ -5,8 +5,8 @@ package merge
 import (
 	"context"
 
-	"github.com/vivint/rothko/data"
-	"github.com/vivint/rothko/dist/tdigest"
+	"github.com/zeebo/rothko/data"
+	"github.com/zeebo/rothko/dist/tdigest"
 )
 
 // TODO(jeff): don't merge into tdigest, merge into a flat weighted buffer

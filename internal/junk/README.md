@@ -1,6 +1,6 @@
 # package junk
 
-`import "github.com/vivint/rothko/internal/junk"`
+`import "github.com/zeebo/rothko/internal/junk"`
 
 package junk is a drop spot for things with no home.
 

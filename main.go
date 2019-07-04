@@ -7,9 +7,9 @@ import (
 	"os"
 
 	"github.com/urfave/cli"
-	_ "github.com/vivint/rothko/database/files"
-	_ "github.com/vivint/rothko/dist/tdigest"
-	_ "github.com/vivint/rothko/listener/graphite"
+	_ "github.com/zeebo/rothko/database/files"
+	_ "github.com/zeebo/rothko/dist/tdigest"
+	_ "github.com/zeebo/rothko/listener/graphite"
 	"github.com/zeebo/errs"
 )
 

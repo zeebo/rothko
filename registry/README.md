@@ -1,6 +1,6 @@
 # package registry
 
-`import "github.com/vivint/rothko/registry"`
+`import "github.com/zeebo/rothko/registry"`
 
 package registry provides ways for plugins to add rothko entities.
 

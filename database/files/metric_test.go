@@ -10,7 +10,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/internal/assert"
 	"github.com/zeebo/errs"
 )
 

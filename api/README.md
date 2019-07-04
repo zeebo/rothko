@@ -1,6 +1,6 @@
 # package api
 
-`import "github.com/vivint/rothko/api"`
+`import "github.com/zeebo/rothko/api"`
 
 package api provides apis for interacting with a rothko server
 

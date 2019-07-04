@@ -1,4 +1,4 @@
-module github.com/vivint/rothko
+module github.com/zeebo/rothko
 
 require (
 	github.com/BurntSushi/toml v0.3.1

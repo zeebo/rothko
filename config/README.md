@@ -1,6 +1,6 @@
 # package config
 
-`import "github.com/vivint/rothko/config"`
+`import "github.com/zeebo/rothko/config"`
 
 package config provides methods to load/create the configs.
 

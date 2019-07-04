@@ -7,13 +7,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/vivint/rothko/dist"
-	"github.com/vivint/rothko/draw"
-	"github.com/vivint/rothko/draw/axis"
-	"github.com/vivint/rothko/draw/heatmap"
-	"github.com/vivint/rothko/draw/iosevka"
-	"github.com/vivint/rothko/draw/key"
-	"github.com/vivint/rothko/draw/observations"
+	"github.com/zeebo/rothko/dist"
+	"github.com/zeebo/rothko/draw"
+	"github.com/zeebo/rothko/draw/axis"
+	"github.com/zeebo/rothko/draw/heatmap"
+	"github.com/zeebo/rothko/draw/iosevka"
+	"github.com/zeebo/rothko/draw/key"
+	"github.com/zeebo/rothko/draw/observations"
 	"github.com/zeebo/float16"
 )
 

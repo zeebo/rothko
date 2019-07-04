@@ -5,7 +5,7 @@ package files
 import (
 	"testing"
 
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 // newTestCacheFile creates a file for the cache tests and will cause all sorts

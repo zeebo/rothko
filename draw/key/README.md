@@ -1,6 +1,6 @@
 # package key
 
-`import "github.com/vivint/rothko/draw/key"`
+`import "github.com/zeebo/rothko/draw/key"`
 
 package key provides a way to draw a heatmap key
 

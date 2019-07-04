@@ -1,6 +1,6 @@
 # package observations
 
-`import "github.com/vivint/rothko/draw/observations"`
+`import "github.com/zeebo/rothko/draw/observations"`
 
 package observations provides drawing of an observations axis.
 

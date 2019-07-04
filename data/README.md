@@ -1,6 +1,6 @@
 # package data
 
-`import "github.com/vivint/rothko/data"`
+`import "github.com/zeebo/rothko/data"`
 
 package data provides types for handling rothko data.
 

@@ -6,7 +6,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/vivint/rothko/internal/assert"
+	"github.com/zeebo/rothko/internal/assert"
 )
 
 func TestDBRead(t *testing.T) {

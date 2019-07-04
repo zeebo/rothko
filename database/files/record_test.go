@@ -5,8 +5,8 @@ package files
 import (
 	"testing"
 
-	"github.com/vivint/rothko/internal/assert"
-	"github.com/vivint/rothko/internal/pcg"
+	"github.com/zeebo/rothko/internal/assert"
+	"github.com/zeebo/rothko/internal/pcg"
 )
 
 func TestRecords(t *testing.T) {

@@ -3,7 +3,7 @@
 package key
 
 import (
-	"github.com/vivint/rothko/draw"
+	"github.com/zeebo/rothko/draw"
 )
 
 // Options are the things you can specify to control the rendering of a key.

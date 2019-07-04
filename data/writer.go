@@ -10,7 +10,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/vivint/rothko/dist"
+	"github.com/zeebo/rothko/dist"
 )
 
 // page keeps track of a mapping of metric name strings to *agg with a time
