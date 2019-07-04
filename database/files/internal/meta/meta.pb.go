@@ -3,10 +3,11 @@
 
 package meta
 
-import fmt "fmt"
-import math "math"
-
-import io "io"
+import (
+	fmt "fmt"
+	io "io"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = fmt.Errorf
@@ -33,6 +34,7 @@ func (m *Metadata) Reset() { *m = Metadata{} }
 
 func init() {
 }
+
 func (m *Metadata) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -86,6 +88,9 @@ func encodeVarintMeta(dAtA []byte, offset int, v uint64) int {
 	return offset + 1
 }
 func (m *Metadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Size_ != 0 {
@@ -134,7 +139,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 			}
 			b := dAtA[iNdEx]
 			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
+			wire |= uint64(b&0x7F) << shift
 			if b < 0x80 {
 				break
 			}
@@ -162,7 +167,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Size_ |= (int(b) & 0x7F) << shift
+				m.Size_ |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -181,7 +186,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Head |= (int(b) & 0x7F) << shift
+				m.Head |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -200,7 +205,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Start |= (int64(b) & 0x7F) << shift
+				m.Start |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -219,7 +224,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.End |= (int64(b) & 0x7F) << shift
+				m.End |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -238,7 +243,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.SmallestEnd |= (int64(b) & 0x7F) << shift
+				m.SmallestEnd |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -250,6 +255,9 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if skippy < 0 {
+				return ErrInvalidLengthMeta
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthMeta
 			}
 			if (iNdEx + skippy) > l {
@@ -318,8 +326,11 @@ func skipMeta(dAtA []byte) (n int, err error) {
 					break
 				}
 			}
-			iNdEx += length
 			if length < 0 {
+				return 0, ErrInvalidLengthMeta
+			}
+			iNdEx += length
+			if iNdEx < 0 {
 				return 0, ErrInvalidLengthMeta
 			}
 			return iNdEx, nil
@@ -350,6 +361,9 @@ func skipMeta(dAtA []byte) (n int, err error) {
 					return 0, err
 				}
 				iNdEx = start + next
+				if iNdEx < 0 {
+					return 0, ErrInvalidLengthMeta
+				}
 			}
 			return iNdEx, nil
 		case 4:

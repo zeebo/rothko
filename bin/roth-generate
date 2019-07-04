@@ -117,7 +117,7 @@ proto() {
 	# strip out the proto imports because we don't need them and they're silly.
 	# we want protobuf as a serialization format, not some api runtime
 	# reflection, generic registry whackdoodlery.
-	"${SED}" -i '/^import proto/d'   -- "${DIR}"/*.pb.go
+	"${SED}" -i '/^\tproto "/d'      -- "${DIR}"/*.pb.go
 	"${SED}" -i '/gogoproto/d'       -- "${DIR}"/*.pb.go
 	"${SED}" -i '/\tXXX/d'           -- "${DIR}"/*.pb.go
 	"${SED}" -i '/XXX/,/^}/d'        -- "${DIR}"/*.pb.go

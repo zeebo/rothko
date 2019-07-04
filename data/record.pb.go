@@ -3,12 +3,12 @@
 
 package data
 
-import fmt "fmt"
-import math "math"
-
-import encoding_binary "encoding/binary"
-
-import io "io"
+import (
+	encoding_binary "encoding/binary"
+	fmt "fmt"
+	io "io"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = fmt.Errorf
@@ -44,6 +44,7 @@ func (m *Record) Reset() { *m = Record{} }
 
 func init() {
 }
+
 func (m *Record) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -128,6 +129,9 @@ func encodeVarintRecord(dAtA []byte, offset int, v uint64) int {
 	return offset + 1
 }
 func (m *Record) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.StartTime != 0 {
@@ -195,7 +199,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 			}
 			b := dAtA[iNdEx]
 			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
+			wire |= uint64(b&0x7F) << shift
 			if b < 0x80 {
 				break
 			}
@@ -223,7 +227,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.StartTime |= (int64(b) & 0x7F) << shift
+				m.StartTime |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -242,7 +246,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.EndTime |= (int64(b) & 0x7F) << shift
+				m.EndTime |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -261,7 +265,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Observations |= (int64(b) & 0x7F) << shift
+				m.Observations |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -280,7 +284,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				byteLen |= (int(b) & 0x7F) << shift
+				byteLen |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -289,6 +293,9 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				return ErrInvalidLengthRecord
 			}
 			postIndex := iNdEx + byteLen
+			if postIndex < 0 {
+				return ErrInvalidLengthRecord
+			}
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
@@ -311,7 +318,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= (uint64(b) & 0x7F) << shift
+				stringLen |= uint64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -321,6 +328,9 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				return ErrInvalidLengthRecord
 			}
 			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthRecord
+			}
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
@@ -362,7 +372,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				byteLen |= (int(b) & 0x7F) << shift
+				byteLen |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -371,6 +381,9 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				return ErrInvalidLengthRecord
 			}
 			postIndex := iNdEx + byteLen
+			if postIndex < 0 {
+				return ErrInvalidLengthRecord
+			}
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
@@ -393,7 +406,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				byteLen |= (int(b) & 0x7F) << shift
+				byteLen |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -402,6 +415,9 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				return ErrInvalidLengthRecord
 			}
 			postIndex := iNdEx + byteLen
+			if postIndex < 0 {
+				return ErrInvalidLengthRecord
+			}
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
@@ -424,7 +440,7 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Merged |= (int64(b) & 0x7F) << shift
+				m.Merged |= int64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -436,6 +452,9 @@ func (m *Record) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			if skippy < 0 {
+				return ErrInvalidLengthRecord
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthRecord
 			}
 			if (iNdEx + skippy) > l {
@@ -504,8 +523,11 @@ func skipRecord(dAtA []byte) (n int, err error) {
 					break
 				}
 			}
-			iNdEx += length
 			if length < 0 {
+				return 0, ErrInvalidLengthRecord
+			}
+			iNdEx += length
+			if iNdEx < 0 {
 				return 0, ErrInvalidLengthRecord
 			}
 			return iNdEx, nil
@@ -536,6 +558,9 @@ func skipRecord(dAtA []byte) (n int, err error) {
 					return 0, err
 				}
 				iNdEx = start + next
+				if iNdEx < 0 {
+					return 0, ErrInvalidLengthRecord
+				}
 			}
 			return iNdEx, nil
 		case 4:

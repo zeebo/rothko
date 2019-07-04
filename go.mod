@@ -2,7 +2,9 @@ module github.com/zeebo/rothko
 
 require (
 	github.com/BurntSushi/toml v0.3.1
+	github.com/gogo/protobuf v1.2.1
 	github.com/pkg/errors v0.8.1 // indirect
+	github.com/robertkrimen/godocdown v0.0.0-20130622164427-0bfa04905481
 	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/urfave/cli v1.20.0
 	github.com/zeebo/assert v0.0.0-20181109011804-10f827ce2ed6
