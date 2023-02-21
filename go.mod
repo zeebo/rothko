@@ -1,21 +1,22 @@
 module github.com/zeebo/rothko
 
+go 1.19
+
 require (
-	github.com/BurntSushi/toml v0.3.1
-	github.com/gogo/protobuf v1.2.1
-	github.com/pkg/errors v0.8.1 // indirect
-	github.com/robertkrimen/godocdown v0.0.0-20130622164427-0bfa04905481
-	github.com/stretchr/testify v1.3.0 // indirect
-	github.com/urfave/cli v1.20.0
-	github.com/zeebo/assert v0.0.0-20181109011804-10f827ce2ed6
-	github.com/zeebo/errs v1.2.0
+	github.com/BurntSushi/toml v1.2.1
+	github.com/urfave/cli v1.22.12
+	github.com/zeebo/assert v1.3.1
+	github.com/zeebo/errs v1.3.0
 	github.com/zeebo/float16 v0.1.0
-	github.com/zeebo/pcg v0.0.0-20181207190024-3cdc6b625a05
+	github.com/zeebo/pcg v1.0.1
 	github.com/zeebo/tdigest v0.1.0
-	go.uber.org/atomic v1.4.0 // indirect
-	go.uber.org/multierr v1.1.0 // indirect
-	go.uber.org/zap v1.10.0
-	golang.org/x/image v0.0.0-20190703141733-d6a02ce849c9
+	go.uber.org/zap v1.24.0
+	golang.org/x/image v0.5.0
 )
 
-go 1.13
+require (
+	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.6.0 // indirect
+)
