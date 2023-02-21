@@ -7,10 +7,12 @@ import (
 	"os"
 
 	"github.com/urfave/cli"
+	"github.com/zeebo/errs"
+
 	_ "github.com/zeebo/rothko/database/files"
 	_ "github.com/zeebo/rothko/dist/tdigest"
 	_ "github.com/zeebo/rothko/listener/graphite"
-	"github.com/zeebo/errs"
+	_ "github.com/zeebo/rothko/listener/storj"
 )
 
 var handled = errs.Class("")

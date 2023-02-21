@@ -14,6 +14,7 @@ import (
 	"time"
 
 	"github.com/urfave/cli"
+	"github.com/zeebo/errs"
 	"github.com/zeebo/rothko/api"
 	"github.com/zeebo/rothko/config"
 	"github.com/zeebo/rothko/data"
@@ -24,7 +25,7 @@ import (
 	"github.com/zeebo/rothko/internal/tmplfs"
 	"github.com/zeebo/rothko/registry"
 	"github.com/zeebo/rothko/ui"
-	"github.com/zeebo/errs"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 var runCommand = cli.Command{
@@ -130,12 +131,20 @@ func run(ctx context.Context, conf *config.Config) (started bool, err error) {
 		static = tmplfs.New(fs)
 	}
 	srv := &http.Server{
-		Addr: conf.API.Address,
 		Handler: api.New(db, static, api.Options{
 			Origin:   conf.API.Origin,
 			Username: conf.API.Security.Username,
 			Password: conf.API.Security.Password,
 		}),
+	}
+
+	cm := &autocert.Manager{
+		Prompt:     autocert.AcceptTOS,
+		HostPolicy: autocert.HostWhitelist(conf.API.Origin),
+		Cache:      autocert.DirCache(conf.API.TLS.Store),
+	}
+	if conf.API.TLS.Store != "" {
+		srv.TLSConfig = cm.TLSConfig()
 	}
 
 	// create and queue the listeners
@@ -171,8 +180,18 @@ func run(ctx context.Context, conf *config.Config) (started bool, err error) {
 		external.Infow("starting api",
 			"config", conf.API.Redact(),
 		)
-		return runServer(ctx, srv, conf.API.TLS.Cert, conf.API.TLS.Key)
+		return runServer(ctx, srv, conf.API.Address, conf.API.TLS.Cert,
+			conf.API.TLS.Key, conf.API.TLS.Store)
 	})
+
+	// queue the acme listener
+	if conf.API.TLS.Store != "" {
+		launcher.Queue(func(ctx context.Context) error {
+			external.Infow("starting http amce endpoint")
+			srv := &http.Server{Handler: cm.HTTPHandler(nil)}
+			return runServer(ctx, srv, ":80", "", "", "")
+		})
+	}
 
 	// because we don't want to rerun the database on sigint, we launch all of
 	// the services under one launcher with the sigint_ctx, and launch the
@@ -217,8 +236,7 @@ func run(ctx context.Context, conf *config.Config) (started bool, err error) {
 }
 
 // runServer runs srv and shuts it down when the context is canceled.
-func runServer(ctx context.Context, srv *http.Server, cert, key string) (
-	err error) {
+func runServer(ctx context.Context, srv *http.Server, addr, cert, key, store string) (err error) {
 
 	// I must be going goofy or something, but I see absolutely no way to
 	// safely use srv.ListenAndServe() with srv.Shutdown(ctx), because you
@@ -229,7 +247,7 @@ func runServer(ctx context.Context, srv *http.Server, cert, key string) (
 	// a TCP keep alive wrapper, whereas Serve doesn't! That means we get to
 	// implement it ourselves. The net/http library is a tire fire.
 
-	lis, err := net.Listen("tcp", srv.Addr)
+	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		return errs.Wrap(err)
 	}
@@ -257,7 +275,7 @@ func runServer(ctx context.Context, srv *http.Server, cert, key string) (
 	}(ctx)
 
 	ke_lis := keepAliveWrapper{lis.(*net.TCPListener)}
-	if cert != "" || key != "" {
+	if cert != "" || key != "" || store != "" {
 		err = srv.ServeTLS(ke_lis, cert, key)
 	} else {
 		err = srv.Serve(ke_lis)

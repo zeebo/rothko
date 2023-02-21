@@ -23,8 +23,9 @@ func Load(data []byte) (*Config, error) {
 			Address string `toml:"address"`
 			Origin  string `toml:"origin"`
 			TLS     struct {
-				Key  string `toml:"key"`
-				Cert string `toml:"cert"`
+				Key   string `toml:"key"`
+				Cert  string `toml:"cert"`
+				Store string `toml:"store"`
 			} `toml:"tls"`
 			Security struct {
 				Username string `toml:"username"`

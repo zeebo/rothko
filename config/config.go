@@ -61,8 +61,9 @@ func (a APIConfig) Redact() APIConfig {
 
 // APITLSConfig holds configuration for the api.tls config section.
 type APITLSConfig struct {
-	Key  string
-	Cert string
+	Key   string
+	Cert  string
+	Store string
 }
 
 // APISecurityConfig holds configuration for the api.security config section.
